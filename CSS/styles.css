@@ -1,4 +1,15 @@
 
+html, body {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 /* ===== NAVBAR ===== */
 
 * {
@@ -127,11 +138,31 @@
     text-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
 }
 
+/* ===== FOOTER ===== */
+
+footer {
+    background-color: #172033;
+    color: #9ca3af;
+    padding: 25px 20px;
+    text-align: center;
+    margin-top: auto;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    border-top: 2px solid #38bdf8;
+}
+
+footer p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+
 
 
 /* ===== MOBILLÄGE ===== */
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 
     .navbar {
         min-height: 70px;
@@ -192,6 +223,11 @@
 
     .menu-toggle.active span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+
+    footer {
+        padding: 20px 15px;
+        font-size: 0.8rem;
     }
 }
 
