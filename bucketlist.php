@@ -29,5 +29,24 @@ include("includes/header.php");
 
 </form>
 
+
+<div class="table-container">
+    <table class="bucket-table">
+        <thead>
+            <tr>
+                <th>Namn</th>
+                <th>Beskrivning</th>
+                <th>Prioritet</th>
+                <th>Åtgärd</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- PHP skriver ut aktiviteterna här -->
+        </tbody>
+    </table>
+</div>
+
+
 <?php
 include("includes/footer.php");

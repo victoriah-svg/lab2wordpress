@@ -254,14 +254,16 @@ footer p:hover {
 
 
 /*-----BUCKETLISTSIDAN-----*/
-/*-----BUCKETLIST FORMULÄR-----*/
+
+/*--FORMULÄR---*/
 
 .bucket-form {
-    background-color: #f0f7fc;
+    background-color: #f5dfd1;
+;
     max-width: 650px;
     padding: 35px;
     border-radius: 12px;
-    border-left: 4px solid #38bdf8;
+    border-left: 4px solid #C76B32;;
     box-sizing: border-box;
     margin: 25px 0;
 }
@@ -336,6 +338,71 @@ footer p:hover {
     background-color: #0284c7;
     transform: translateY(-2px);
 }
+
+/*---TABELL---*/
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 25px 0;
+    border-radius: 10px;
+}
+
+.bucket-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    text-align: left;
+}
+
+.bucket-table th {
+     background-color: #C76B32;
+    color: #ffffff;
+    padding: 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.bucket-table td {
+    padding: 15px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #374151;
+    font-size: 0.95rem;
+}
+
+.bucket-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.bucket-table tbody tr:hover {
+    background-color: #f0f7fc;
+}
+
+/* Prioritetsmarkeringar */
+.priority {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.priority.high {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.priority.medium {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.priority.low {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+
 
 
 
@@ -427,6 +494,8 @@ footer p:hover {
     }
 
     /*-----BUCKETLISTSIDA-----*/
+
+    /*--FORMULÄR--*/
     .bucket-form {
         padding: 22px 18px;
     }
@@ -434,5 +503,13 @@ footer p:hover {
     .bucket-form button {
         width: 100%;
     }
+
+    /*--TABELL--*/
+   
+    .bucket-table {
+        min-width: 600px;
+    }
+
+
 
 }
