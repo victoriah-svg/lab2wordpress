@@ -2,7 +2,7 @@
 /*Inkluderar config-filen med databasanslutningar */
 include("includes/config.php");
 
-/* Anslut till databasen*/
+/* Anslut till databasen med variabler från config-fil*/
 $db = new mysqli(DBHOST, DBUSER, DBPASS, DBDATABASE);
 if($db->connect_errno > 0){
     die('Fel vid anslutning [' . $db->connect_error . ']');

@@ -3,6 +3,8 @@
 include("includes/header.php");
 //Inkluderar config-filen med databasanslutningar
 include("includes/config.php");
+//inkluderar klassfilen 
+include("includes/classes/ListItem.class.php");
 
 /* Anslut till databasen med konto för bucketlist */
 $db = new mysqli(DBHOST, DBUSER, DBPASS, DBDATABASE);
@@ -44,6 +46,12 @@ if (!$result = $db->query($sql)) {
     <button type="submit">Lägg till i min bucketlist</button>
 
 </form>
+
+<?php
+$listItem = new ListItem(); 
+
+var_dump($listItem->setName("Utomlandsresa"));
+?>
 
 
 <div class="table-container">
