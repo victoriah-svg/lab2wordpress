@@ -10,7 +10,7 @@ Projektet är utvecklat som en del av kursen Webbutveckling för WordPress vid M
 
 Webbplatsen är publicerad på Mittuniversitetets webbserver.
 
-**Webbadress:** [Lägg in webbadressen här]
+**Webbadress:** [(https://studenter.miun.se/~vihe2504/lab2wordpress/)]
 
 ## Funktioner
 
