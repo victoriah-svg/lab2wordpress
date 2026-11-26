@@ -16,24 +16,55 @@ class ListItem
         $this->db = new mysqli(DBHOST, DBUSER, DBPASS, DBDATABASE);
 
         if ($this->db->connect_errno > 0) {
-            die('Fel vid anslutning ' . $this->db->connect_error );
+            die('Fel vid anslutning ' . $this->db->connect_error);
         }
     }
 
+    //funktion för att lägga till ett item 
+    public function addItem(string $name, string $description, int $priority): bool
+    {
+        //anropar setfunktionerna med värden som skickats med
+        $this->setName($name);
+        $this->setDescription($description);
+        $this->setPriority($priority);
+
+        //förbereder statement 
+        $sql = "INSERT INTO bucketlist (name, description, priority)
+            VALUES (?, ?, ?)";
+
+        $stmt = $this->db->prepare($sql);
+
+        if (!$stmt) {
+            return false;
+        }
+
+        //sätter värdena där frågetecknen fanns - bind parameters - ssi är string string int
+        $stmt->bind_param("ssi", $this->name, $this->description, $this->priority);
+
+        $success = $stmt->execute(); //kör vår sql-fråga
+
+        $stmt->close();
+
+        return $success;
+    }
+
     //set-funktioner
-    public function setName(string $name) : string {
+    public function setName(string $name): string
+    {
         $this->name = $name;
         return "Du lade till [$name]";
     }
 
     //set-funktioner
-    public function setDescription(string $description) : string {
-        $this->description= $description;
+    public function setDescription(string $description): string
+    {
+        $this->description = $description;
         return "Du lade till [$description]";
     }
 
     //set-funktioner
-    public function setPriority(string $priority) : string {
+    public function setPriority(string $priority): string
+    {
         $this->priority = $priority;
         return "Du lade till [$priority]";
     }

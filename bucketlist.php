@@ -50,7 +50,7 @@ if (!$result = $db->query($sql)) {
 <?php
 $listItem = new ListItem(); 
 
-var_dump($listItem->setName("Utomlandsresa"));
+var_dump($listItem->addItem("Hike", "Gå vandring och sova utomhus", 2));
 ?>
 
 
