@@ -48,6 +48,14 @@ class ListItem
         return $success;
     }
 
+    public function getItems(): array{
+        $sql = "SELECT * FROM bucketlist;"; //sql-fråga
+        $result = mysqli_query($this->db, $sql); //svaret
+
+        // returnera som assosiativ array
+        return mysqli_fetch_all($result, MYSQLI_ASSOC);
+    }
+
     //set-funktioner
     public function setName(string $name): string
     {
