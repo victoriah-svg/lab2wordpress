@@ -56,7 +56,6 @@ if (isset($_POST['name'])) {
 
     //om allt korrekt ifyllt
     if (trim($name) !== '' && !trim($description) == '') {
-        echo "<p class='success'>Bra input </p>";
         if ($listItem->addItem($name, $description, $priority)) {
             echo "<p class='success'>Tillagt i Bucketlist</p>";
         } else {
@@ -66,6 +65,7 @@ if (isset($_POST['name'])) {
 }
 
 ?>
+
 
 <form class="bucket-form" method="POST" action="bucketlist.php">
 

@@ -10,6 +10,16 @@ body {
     flex-direction: column;
 }
 
+/*--successmeddelande--*/
+.success{
+    color: #166534;
+}
+
+/*---felmeddelande---*/
+.error{
+    color: red !important;
+}
+
 /*----texter----*/
 /* Grundläggande text */
 body {
