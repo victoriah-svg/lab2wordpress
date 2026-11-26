@@ -25,8 +25,6 @@ $sql .= "INSERT INTO bucketlist (name, description, priority) VALUES
 ('Spanska', 'Lära mig spanska', 2)
 ";
 
-echo "<pre>$sql</pre>"; // Skriv ut SQL-frågan till skärm
-
 /* Skicka SQL-frågan till DB */
 if($db->multi_query($sql)) {
     echo "Tabell installerad.";
