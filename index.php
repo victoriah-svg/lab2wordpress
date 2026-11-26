@@ -13,7 +13,11 @@ include("includes/header.php");
     </p>
     <br>
     <p>
-        Här ska jag skriva om min upplevelse samt vad jag tycker om att jobba med php.
+        Detta har varit en lärorik uppgift och jag tycker php är ett smidigt språk då det 
+        går att skriva html-kod samt php-kod ihop på ett sätt som underlättar utläsning av input 
+        från formulär samt skriva ut data som hämtas från databas till exempel. Det är dock lite ovant att programmera 
+        med PHP som är svagt typat men har stöd för striktare typkontroller
+        då jag arbetat både med JavaScript som är svagt typat samt C# som är starkt typat. 
         
     </p>
 </section>
