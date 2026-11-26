@@ -79,9 +79,16 @@ class ListItem
     }
 
     //set-funktioner
-    public function setPriority(string $priority): string
+    public function setPriority(int $priority): string
     {
         $this->priority = $priority;
         return "Du lade till [$priority]";
+    }
+
+    //Destruktor
+    function __destruct()
+    {
+        //stänger databaskopplingen
+        mysqli_close($this->db);
     }
 }
