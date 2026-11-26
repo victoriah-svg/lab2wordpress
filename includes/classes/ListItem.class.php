@@ -20,7 +20,7 @@ class ListItem
         }
     }
 
-    //funktion för att lägga till ett item 
+    //metod för att lägga till ett item 
     public function addItem(string $name, string $description, int $priority): bool
     {
         //anropar setfunktionerna med värden som skickats med
@@ -48,12 +48,20 @@ class ListItem
         return $success;
     }
 
+    //metod för att hämta alla items
     public function getItems(): array{
         $sql = "SELECT * FROM bucketlist;"; //sql-fråga
         $result = mysqli_query($this->db, $sql); //svaret
 
         // returnera som assosiativ array
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
+    }
+
+    //metod för att radera item med specifikt id
+    public function deleteItem(int $id): bool {
+        $sql = "DELETE FROM bucketlist WHERE id=$id;";
+        return mysqli_query($this->db, $sql);
+
     }
 
     //set-funktioner

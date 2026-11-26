@@ -36,9 +36,13 @@ include("includes/classes/ListItem.class.php");
 </form>
 
 <?php
+//instans av klass
 $listItem = new ListItem(); 
-
+//anropar metod getItems som returnerar array
 $allItems = $listItem->getItems();
+
+var_dump($listItem->deleteItem(2)); 
+$listItem->getItems();
 
 ?>
 
