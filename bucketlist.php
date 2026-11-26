@@ -18,6 +18,22 @@ $description = "";
 //instans av klass
 $listItem = new ListItem();
 
+//Om deleteid skickats med i adressraden
+if(isset($_GET['deleteid'])){
+    //spara värdet i variabel
+    $deleteid = intval($_GET['deleteid']);
+
+    //kalla på metod deleteItem med id som skickats med
+    if($listItem->deleteItem($deleteid)){
+        //om det gick bra skriv ut meddelande
+        echo "<p class='success'>Radering slutförd</p>";
+    }else{
+        //annars skriv ut felmeddelande
+        echo "<p class='error'>Det gick inte att radera.. testa igen</p>";
+    }
+
+}
+
 
 
 //kontrollerar om formuläret skickats än 
@@ -116,6 +132,10 @@ if (isset($_POST['name'])) {
                     <td>
                         <?= $item['created_at'] ?>
                     </td>
+                    <td>
+                        <a href="bucketlist.php?deleteid=<?= $item['id'] ?>">Ta bort</a>
+                    </td>
+                    
                 </tr>
             <?php }
             ?>
