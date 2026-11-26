@@ -6,18 +6,6 @@ include("includes/config.php");
 //inkluderar klassfilen 
 include("includes/classes/ListItem.class.php");
 
-/* Anslut till databasen med konto för bucketlist */
-$db = new mysqli(DBHOST, DBUSER, DBPASS, DBDATABASE);
-if ($db->connect_errno > 0) {
-    die('Fel vid anslutning [' . $db->connect_error . ']');
-}
-
-/* SQL-fråga  för att läsa ut allt (*) från tabellen artikel */
-$sql = "SELECT * FROM bucketlist";
-if (!$result = $db->query($sql)) {
-    die('Fel vid SQL-fråga [' . $db->error . ']');
-}
-
 ?>
 <h1>Bucketlist</h1>
 <form class="bucket-form" method="POST" action="bucketlist.php">
@@ -50,7 +38,8 @@ if (!$result = $db->query($sql)) {
 <?php
 $listItem = new ListItem(); 
 
-var_dump($listItem->getItems());
+$allItems = $listItem->getItems();
+
 ?>
 
 
@@ -71,20 +60,20 @@ var_dump($listItem->getItems());
 
             /* Loopa genom resultatet (alla rader som returneras av SQL-frågan) 
     - Skriv ut i tabell*/
-            while ($row = $result->fetch_assoc()) {
+            foreach($allItems as $item ){
             ?>
                 <tr>
                     <td>
-                        <?= $row['name'] ?>
+                        <?= $item['name'] ?>
                     </td>
                     <td>
-                        <?= $row['description'] ?>
+                        <?= $item['description'] ?>
                     </td>
                     <td>
-                        <?= $row['priority'] ?>
+                        <?= $item['priority'] ?>
                     </td>
                     <td>
-                        <?= $row['created_at'] ?>
+                        <?= $item['created_at'] ?>
                     </td>
                 </tr>
             <?php }
